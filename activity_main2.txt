@@ -8,21 +8,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/name"
+    <TextView
+        android:id="@+id/textname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"/>
-    <EditText
-        android:id="@+id/lname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Age"/>
+        android:textSize="30dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="123dp"
+    <TextView
+        android:id="@+id/textage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:textSize="30dp" />
 
 </LinearLayout>
