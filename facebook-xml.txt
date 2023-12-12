@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Profile Picture -->
+
+
+    <!-- Post Image -->
+
+    <ImageView
+        android:id="@+id/profilelogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/facebook" />
+
+    <!-- Like ImageView -->
+    <ImageView
+        android:id="@+id/postImageView"
+        android:layout_width="1000dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profilelogo"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/facebookpost" />
+
+    <ImageView
+        android:id="@+id/likeImageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/postImageView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/facebooklike" />
+
+    <!-- Comment ImageView -->
+    <ImageView
+        android:id="@+id/commentImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/postImageView"
+        android:layout_toEndOf="@id/likeImageView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/facebookcomment" />
+
+    <!-- Share ImageView -->
+    <ImageView
+        android:id="@+id/shareImageView"
+        android:layout_width="1000dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/postImageView"
+        android:layout_toEndOf="@id/commentImageView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/facebookshare" />
+</RelativeLayout>

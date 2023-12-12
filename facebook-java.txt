@@ -1,0 +1,40 @@
+package com.example.facebook;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ImageView likeImage = findViewById(R.id.likeImageView);
+        ImageView commentImage = findViewById(R.id.commentImageView);
+        ImageView shareImage = findViewById(R.id.shareImageView);
+
+        likeImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle like image click
+            }
+        });
+
+        commentImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle comment image click
+            }
+        });
+
+        shareImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle share image click
+            }
+        });
+    }
+}
