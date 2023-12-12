@@ -1,46 +1,64 @@
-package com.example.myapplication;
+package com.example.sqllite;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String VALID_USERNAME="user";
-    private static final String VALID_PASSWORD="password";
-
-    private EditText usernameEditText1;
-    private EditText passwordEditText2;
-    private Button loginButton;
-
+    TextView tv1;
+    EditText et1,et2,et3;
+    Button bt1,bt2,bt3,bt4;
+    String rno;
+    String name;
+    String dept;
+    SQLiteDatabase db;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        usernameEditText1=findViewById(R.id.usernameEditText1);
-        passwordEditText2=findViewById(R.id.passwordEditText2);
-        loginButton=findViewById(R.id.loginButton);
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String enteredUsername = usernameEditText1.getText().toString();
-                String enteredPassword = passwordEditText2.getText().toString();
-                if (isValidCredentials(enteredUsername, enteredPassword)) {
-                    showToast("Login successful");
-                }
-                else {
-                    showToast("Invalid credentials");
-                }
-            }
-        }
-        );}
-    private boolean isValidCredentials(String enterUsername, String enteredPassword){
-        return VALID_USERNAME.equals(enterUsername) && VALID_PASSWORD.equals(enteredPassword);
+        tv1 = findViewById(R.id.tv1);
+        et1 = findViewById(R.id.et1);
+        et2 = findViewById(R.id.et2);
+        et3 = findViewById(R.id.et3);
+        bt1 = findViewById(R.id.bt1);
+        bt2 = findViewById(R.id.bt2);
+        bt3 = findViewById(R.id.bt3);
+        bt4 = findViewById(R.id.bt4);
+        DbHelper dbHelper = new DbHelper(this);
+        db = dbHelper.getWritableDatabase();
+        db = dbHelper.getReadableDatabase();
     }
-    private void showToast(String message){
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    public void onInsert(View view) {
+        rno = et1.getText().toString();
+        name = et2.getText().toString();
+        dept = et3.getText().toString();
+        if (rno.equals("") || name.equals("") || dept.equals("")) {
+            Toast.makeText(this,"please enter values",Toast.LENGTH_LONG).show();
+        }
+        else {
+            ContentValues values = new ContentValues();
+            values.put("rollno",rno);
+            values.put("name",name);
+            values.put("dept",dept);
+            db.insert("student",null,values);
+            Toast.makeText(this,"Inserted",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onUpdate(View view) {
+    }
+
+    public void onRead(View view) {
+    }
+
+    public void onDelete(View view) {
     }
 }

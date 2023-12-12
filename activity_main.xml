@@ -1,60 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-     <TextView
-         android:id="@+id/textView"
-         android:layout_width="450dp"
-         android:layout_height="50dp"
-         android:textAlignment="center"
-         android:textSize="20dp"
-         android:textStyle="bold"
-         android:text="LOGIN FORM"
-         android:textColor="@color/black" />
-
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tv1"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:textSize="30dp"
         android:textColor="@color/black"
-        android:textAlignment="center" />
+        android:text="Student Details"
+        android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/usernameEditText1"
-        android:layout_width="213dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:hint="Enter username" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/et1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:textAlignment="center" />
+        android:hint="Enter rollno"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="18dp"
+        android:layout_below="@+id/tv1"/>
 
     <EditText
-        android:id="@+id/passwordEditText2"
-        android:layout_width="213dp"
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:hint="Enter username" />
-        />
+        android:hint="Enter name"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="18dp"
+        android:layout_below="@+id/et1"/>
+
+    <EditText
+        android:id="@+id/et3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
+        android:hint="Enter department" />
 
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:text="SUBMIT"
-        />
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert"
+        android:onClick="onInsert"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/et3"/>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:onClick="onUpdate"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/bt1"/>
+
+    <Button
+        android:id="@+id/bt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read"
+        android:onClick="onRead"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/bt2"/>
+
+    <Button
+        android:id="@+id/bt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:onClick="onDelete"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/bt3"/>
+
+</RelativeLayout>
